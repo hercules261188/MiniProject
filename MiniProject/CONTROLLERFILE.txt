@@ -1,0 +1,30 @@
+package miniproject.javafiles;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class GUIController implements Initializable {
+
+    String tempStreetName;
+
+    @FXML private ChoiceBox choiceBox;
+    @FXML private Label choiceBoxLabel;
+
+    public void choiceBoxButtonPressed(){
+        tempStreetName=(choiceBox.getValue().toString());
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        choiceBoxLabel.setText("");
+        choiceBox.getItems().add("Patel Road");
+        choiceBox.getItems().add("Tilak Road");
+        choiceBox.getItems().add("Kripa Lane");
+
+    }
+}
